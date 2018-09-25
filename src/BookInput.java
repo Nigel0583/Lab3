@@ -77,7 +77,7 @@ public class BookInput {
             JTextArea textArea = new JTextArea();
 
             textArea.setText(String.format( "%-20s %10s  \n\n %-20s %10s ","Favourite book",
-                     dislikeBook.BooktoString(), "Least Favourite",likeBook.BooktoString()));
+                     dislikeBook.toString(), "Least Favourite",likeBook.toString()));
 
             JOptionPane.showMessageDialog(null, textArea);
         }
