@@ -48,7 +48,7 @@ public class Book {
     }
 
     public String BooktoString(){
-        return "Title" +title+ "\nPages" +numPages+ "\nISBN" +isbn+ "\nPrice" +price;
+        return "\nTitle " +title+ "\nPages " +numPages+ "\nISBN " +isbn+ "\nPrice " +price;
     }
 
     public Book(String title, int numPages, String isbn, double price){

@@ -4,14 +4,16 @@ import java.awt.*;
 public class BookInput {
 
     public static void main(String[] args) {
-    Book likeBook = new Book();
-    Book dislikeBook = new Book();
+
+        Book likeBook = new Book();
+        Book dislikeBook = new Book();
+
         JTextField titleField = new JTextField(6);
         JTextField pagesField = new JTextField(6);
         JTextField isbnField = new JTextField(6);
         JTextField priceField = new JTextField(4);
 
-        JPanel bookPanel = new JPanel(new GridLayout(4,1));
+        JPanel bookPanel = new JPanel(new GridLayout(4, 1));
         bookPanel.add(new JLabel("Title:"));
         bookPanel.add(titleField);
         bookPanel.add(new JLabel("Pages:"));
@@ -23,7 +25,7 @@ public class BookInput {
 
 
         int bookInput = JOptionPane.showConfirmDialog(null, bookPanel,
-                "Favourite book and least favourite", JOptionPane.OK_CANCEL_OPTION);
+                "Favourite book", JOptionPane.OK_CANCEL_OPTION);
         String title = titleField.getText();
         likeBook.setTitle(title);
 
@@ -44,7 +46,7 @@ public class BookInput {
         JTextField isbnField2 = new JTextField(6);
         JTextField priceField2 = new JTextField(4);
 
-        JPanel bookPanel2 = new JPanel(new GridLayout(4,1));
+        JPanel bookPanel2 = new JPanel(new GridLayout(4, 1));
         bookPanel2.add(new JLabel("Title:"));
         bookPanel2.add(titleField2);
         bookPanel2.add(new JLabel("Pages:"));
@@ -55,7 +57,7 @@ public class BookInput {
         bookPanel2.add(priceField2);
 
         int bookInput2 = JOptionPane.showConfirmDialog(null, bookPanel2,
-                "Please enter the title, pages, ISBN and price of your favourite book", JOptionPane.OK_CANCEL_OPTION);
+                "Least favourite", JOptionPane.OK_CANCEL_OPTION);
 
         String title1 = titleField2.getText();
         dislikeBook.setTitle(title1);
@@ -72,14 +74,12 @@ public class BookInput {
         dislikeBook.setPrice(price3);
 
         if (bookInput == JOptionPane.OK_OPTION && bookInput2 == JOptionPane.OK_OPTION) {
-            System.out.print("Title: "+ likeBook.getTitle() + "\nISBN: " + likeBook.getIsbn() +"\nPrice: "+ likeBook.getPrice() +
-                    "\nPages: " + likeBook.getNumPages() +"\n\n");
+            JTextArea textArea = new JTextArea();
 
-            System.out.print("Title: "+ dislikeBook.getTitle() + "\nISBN: " + dislikeBook.getIsbn() +"\nPrice: "+ dislikeBook.getPrice() +
-                    "\nPages: " + dislikeBook.getNumPages() +"\n\n");
+            textArea.setText(String.format( "%-20s %10s  \n\n %-20s %10s ","Favourite book",
+                     dislikeBook.BooktoString(), "Least Favourite",likeBook.BooktoString()));
+
+            JOptionPane.showMessageDialog(null, textArea);
         }
-
-
-
     }
 }
