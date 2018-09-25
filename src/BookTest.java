@@ -9,7 +9,7 @@ public class BookTest {
         int numPages = book2.getNumPages();
         System.out.print(book1.getTitle() + "\n" + book1.getIsbn() +"\n"+ book1.getPrice() +"\n" + book1.getNumPages() +"\n\n");
         System.out.print(book2.getTitle() + "\n\n");
-        System.out.print(book1.BooktoString());
+        System.out.print(book1.toString());
 
 
 

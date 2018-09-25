@@ -26,6 +26,7 @@ public class BookInput {
 
         int bookInput = JOptionPane.showConfirmDialog(null, bookPanel,
                 "Favourite book", JOptionPane.OK_CANCEL_OPTION);
+
         String title = titleField.getText();
         likeBook.setTitle(title);
 
@@ -80,6 +81,9 @@ public class BookInput {
                      dislikeBook.toString(), "Least Favourite",likeBook.toString()));
 
             JOptionPane.showMessageDialog(null, textArea);
+        }
+        else if (bookInput == JOptionPane.CANCEL_OPTION) {
+            JOptionPane.showMessageDialog(null, "Error");
         }
 
     }
