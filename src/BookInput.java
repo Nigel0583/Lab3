@@ -32,7 +32,7 @@ public class BookInput {
                 "Favourite book", JOptionPane.OK_CANCEL_OPTION);
         if (bookInput == JOptionPane.CANCEL_OPTION)
         {
-            JOptionPane.showMessageDialog(null, "Error");
+            JOptionPane.showMessageDialog(null, likeBook.toString());
             System.exit(0);
         }
 
@@ -75,7 +75,7 @@ public class BookInput {
                 "Least favourite", JOptionPane.OK_CANCEL_OPTION);
         if (bookInput2 == JOptionPane.CANCEL_OPTION)
         {
-            JOptionPane.showMessageDialog(null, "Error");
+            JOptionPane.showMessageDialog(null,dislikeBook.toString());
             System.exit(0);
         }
 
