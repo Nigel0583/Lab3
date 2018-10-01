@@ -1,22 +1,18 @@
 public class AnimalDriver {
     public static void main(String[] args) {
 
-String[] con= { "Africa","Antarctica","Asia","Europe","North America","South America","Australia" };
+        String[] continents = { "Africa"};
+
         Animal animal = new Animal();
+
+
         animal.setWeight(200);
         animal.setAge(4);
         animal.setType("Lion");
+        animal.setContinents(continents);
 
+        System.out.println(animal.toString());
 
-       for (int i =0; i<=6; i++){
-           String item= con[i];
-           animal.setContinents(item);
-
-
-        }
-
-
-        System.out.print(animal.toString());
 
     }
 }

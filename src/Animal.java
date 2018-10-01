@@ -2,7 +2,7 @@ public class Animal {
 
     private String type;
     private int age;
-    private String continents  ;
+    private String[] continents = new String[6] ;
     private double weight;
 
 
@@ -10,7 +10,7 @@ public class Animal {
         return type;
     }
 
-    public String getContinents(){
+    public String[] getContinents(){
         return continents;
     }
 
@@ -31,7 +31,7 @@ public class Animal {
         this.age = age;
     }
 
-    public void setContinents(String continents) {
+    public void setContinents(String[] continents) {
         this.continents = continents;
     }
 
@@ -48,10 +48,19 @@ public class Animal {
     }
 
     public String toString(){
-        return "\ntype " +type+ "\nage " +age+ "\ncontinents " +continents+ "\nweight " +weight;
+        String arrayContinents="";
+
+         for (int i=0; i < continents.length; i++){
+
+
+            arrayContinents += continents[i];
+
+         }
+
+        return "\ntype " +type+ "\nage " +age+ "\ncontinents " +arrayContinents+ "\nweight " +weight;
     }
 
-    public Animal(String type, int age, String continents, double weight){
+    public Animal(String type, int age, String[] continents, double weight){
         setType(type);
         setAge(age);
         setContinents(continents);
